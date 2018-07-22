@@ -69,6 +69,7 @@ docker rm $(docker ps -a -q)
 docker run -d --name redisHost -p 6379:6379 redis:latest
 ```
 `--name redisHost` задаем имя контейнеру, `-p <host-port>:<container-port>` указываем наш порт и порт внутри контейнера. Чтобы указать ещё и ip адрес, пишем `-p 127.0.0.1:6379:6379`
+
 ***Чтобы посмотреть порт в контейнере***:
 ```
 docker port redisHost
