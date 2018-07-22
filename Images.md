@@ -44,9 +44,35 @@ docker inspect e976abde6626
 ```
 docker logs e976abde6626
 ```
+***Остановить контейнер:***
+```
+docker stop c19a6dede2a0
+```
+
+***Удалить контейнер:***
+```
+docker rm c19a6dede2a0
+```
 
 ***Чтобы запустить контейнер и замапить на него порт*** нужно выполнить следующую команду:
 ```
 docker run -d --name redisHost -p 6379:6379 redis:latest
 ```
-`--name redisHost` задаем имя контейнеру, `-p <host-port>:<container-port>` указываем наш порт и порт внутри контейнера.
+`--name redisHost` задаем имя контейнеру, `-p <host-port>:<container-port>` указываем наш порт и порт внутри контейнера. Чтобы указать ещё и ip адрес, пишем `-p 127.0.0.1:6379:6379`
+***Чтобы посмотреть порт в контейнере***:
+```
+docker port redisHost
+```
+***Запустить контейнер и выполнить команду в нём:***
+```
+docker run -it redis uname -a
+```
+***Запустить контейнер и выполнить несколько команд в нём:***
+```
+docker run -it redis cat /proc/version;ls /; pwd
+```
+***Создать имэйдж из Dockerfile:***
+```
+docker build -t httpd-image -f httpd.Dockerfile .
+```
+
