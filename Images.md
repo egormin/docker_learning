@@ -86,4 +86,8 @@ docker run -it redis cat /proc/version;ls /; pwd
 ```
 docker build -t httpd-image -f httpd.Dockerfile .
 ```
+***Удалить имэйдж:***
+```
+docker rmi httpd-image
+```
 
