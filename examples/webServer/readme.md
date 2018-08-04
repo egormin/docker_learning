@@ -7,3 +7,7 @@ docker build -t httpd-image -f httpd.Dockerfile .
 ```
 docker run -d --name httpdServ -p 80:80 httpd-image
 ```
+#### To check:
+```
+curl localhost
+```
