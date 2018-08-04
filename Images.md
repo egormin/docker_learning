@@ -94,3 +94,7 @@ docker rmi httpd-image
 ```
 docker run -d --name my-production-running-app -e NODE_ENV=production -p 3000:3000 my-nodejs-app
 ```
+***Для игнорирования файлов надо добавить их в .dockerignore:***
+```
+echo passwords.txt >> .dockerignore
+```
