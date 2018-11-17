@@ -10,3 +10,23 @@
 - ***Docker proxy*** - процесс, ответственный за биндинг портов контейнера на порты хоста. 
 - ***Docker service*** - сущность из swarm. Позволяет масштабировать контейнеры через множественные докер демоны. 
 
+### Технологии изоляции
+ ****Namespaces****
+ 
+При запуске контейнера докер создает набор нэймспейсов для него. Это обеспечивает изоляцию. Каждый аспект контейнера работает в своем неймспейсе и к нему нет доступа из-вне. 
+Некоторые неймспейсы: 
+- ***pid*** namespace - process isolation (PID - process id)
+- ***net*** namespace - managing network interfaces
+- ***ipc*** namespace - managing access to IPC resources (InterProcess Communication)
+- ***mnt*** namespace - managing mount-points
+- ***uts*** namespace - isolation kernel and version identifiers (UTS: Unix Timesharing System)
+
+ ****Control groups****
+Фича ядра Linux, которая позволяет ограничивать, изолировать ресурсы (network, block i/o, CPU, Memory) для определенных процессов. Т.е. это группа процессов, объединенная по какому-то критерию и ограниченная лимитами
+
+ ****Chroot****
+ Изоляция на уровне файловой системы.
+ 
+ ### Файловые системы
+ ![docker_architecture](pic/2.JPG)
+ 
