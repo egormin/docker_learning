@@ -50,3 +50,22 @@ _________________
 docker build --build-arg=BUILD_NUMBER=${BUILD_NUMBER} --build-arg=JOB_NAME=${JOB_NAME} .
 ```
 
+#### Пример применения аргументов
+```
+FROM openjdk:8-jdk
+
+RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
+
+ARG user=jenkins
+ARG group=jenkins
+ARG uid=1000
+ARG gid=1000
+ARG http_port=8080
+ARG agent_port=50000
+ARG JENKINS_HOME=/var/jenkins_home
+
+RUN mkdir -p  $JENKINS_HOME \
+    && chown ${uid}:${gid} $JENKINS_HOME \
+    && groupadd -g ${gid} ${group} \
+    && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+    ```
