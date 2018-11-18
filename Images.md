@@ -52,3 +52,10 @@ docker history
 ```
 docker tag
 ```
+
+***Переименовать имэйдж:***
+```
+docker tag <id | tag> <new tag>
+docker tag 0448djd8 eg/teamcity:1.0
+docker tag eg/teamcity:1.0 eg/teamcity:latest
+```
