@@ -12,3 +12,17 @@ COPY --from=builder /build/script.sh /opt
 EXPOSE 8080
 ENTRYPOINT ["bash", "/opt/script.sh"]
 ```
+
+#### Onbuild
+```
+FROM busybox as builder
+RUN adduser dummy -u 1234 -S
+USER dummy
+
+ONBUILD USER root
+ONBUILD RUN echo "Some commands"
+
+FROM builder
+RUN id
+```
+id будет root. Без ONBUILD был бы dummy. Т.е. будут выполняться указанные конамды, если он используется как базовый для другого имэйджа.
