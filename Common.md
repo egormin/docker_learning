@@ -43,3 +43,14 @@ docker pull <name>
 ```
 docker push <name>
 ```
+
+***Healthchecks***
+```
+HEALTHCHECK --interval=5s --timeout=1s --start-period=60s --retries=1\
+CMD curl -s -f localhost:5000 || exit 1
+```
+- --interval=DURATION (default: 30s)
+- --timeout=DURATION (default: 30s)
+- --start-period=DURATION (default: 0s)
+- --retries=N (default: 3)
+
