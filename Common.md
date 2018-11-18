@@ -54,3 +54,8 @@ CMD curl -s -f localhost:5000 || exit 1
 - --start-period=DURATION (default: 0s)
 - --retries=N (default: 3)
 
+***Для игнорирования файлов надо добавить их в .dockerignore:***
+```
+echo passwords.txt >> .dockerignore
+```
+
