@@ -73,3 +73,45 @@ docker run -d --name my-production-running-app -e NODE_ENV=production -p 3000:30
 ```
 echo passwords.txt >> .dockerignore
 ```
+***Создать контейнер, но не запускать его:***
+```
+docker create
+```
+***Запустить контейнер:***
+```
+docker start
+```
+****docker run = docker create + docker start****
+***Переименовать контейнер:***
+```
+docker rename
+```
+***Обновить лимиты ресурсов контейнера:***
+```
+docker update
+```
+***Остановить и запустить контейнер:***
+```
+docker restart
+```
+***Поставить контейнер на паузу:***
+```
+docker pause
+```
+***Снять контейнер с паузы:***
+```
+docker unpause
+```
+***Заблокировать пока запущенный контейнер не остановится:***
+```
+docker wait
+```
+***Послать SIGKILL запущенному контейнеру:***
+```
+docker kill
+```
+***Подключиться к запущенному контейнеру:***
+```
+docker attach
+```
+
