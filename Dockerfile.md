@@ -17,3 +17,9 @@ https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 - ****STOPSIGNAL**** - устанавливает стопсигнал, который будет послан контейнеру для выхода
 - ****LABEL**** - использует key/value метаданные
 
+****ENTRYPOINT/CMD**** имеет 2 формы написания:
+- ***exec форма***: ["echo", "hello", "world"]. Эта предпочтительнее
+- ***shell форма***: echo hello world
+
+Можно всё писать и в CMD и в ENTRYPOINT: httpd -DFOREGROUND
+
