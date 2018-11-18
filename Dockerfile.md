@@ -33,3 +33,20 @@ docker run ping:1.0 -с1 google.com
 ```
 будет пинговаться google.com один раз
 
+#### Применение аргументов
+```
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+_________________
+docker build --build-arg=BASE_IMAGE=ubuntu:16.04 .
+```
+Для CI систем было бы полезно:
+```
+ARG BUILD_NUMBER
+ARG JOB_NAME
+LABEL build_number="${BUILD_NUMBER}"
+LABEL job_name="${JOB_NAME}"
+_________________
+docker build --build-arg=BUILD_NUMBER=${BUILD_NUMBER} --build-arg=JOB_NAME=${JOB_NAME} .
+```
+
