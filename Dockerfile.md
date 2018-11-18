@@ -23,3 +23,13 @@ https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 
 Можно всё писать и в CMD и в ENTRYPOINT: httpd -DFOREGROUND
 
+При запуске контейнера те команды, что передаются через командную строку заменят собой те, что указаны в CMD:
+```
+docker run ping:1.0 google.com 
+```
+будет пинговаться google.com 
+```
+docker run ping:1.0 -с1 google.com 
+```
+будет пинговаться google.com один раз
+
