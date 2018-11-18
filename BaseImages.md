@@ -17,4 +17,7 @@ LABEL architecture="amd64" \
       OS="CentOS" \
       License=GPLv2\
       maintainer="John Deer (jdeer@google.com)"
+
+## Default command
+CMD ["/bin/bash"]
 ```
