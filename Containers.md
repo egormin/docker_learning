@@ -109,6 +109,10 @@ docker logs e976abde6626
 ```
 docker inspect e976abde6626
 ```
+***Посмотреть детальную информацию о контейнере с фильтрацией:***
+```
+docker inspect $(docker ps -lqa) | jq .[].Mounts
+```
 ***Посмотреть события из контейнера:***
 ```
 docker events e976abde6626
